@@ -64,6 +64,7 @@ void MainWindow::calculate()
         {
             total += 290;
         }
+        maxGuests = 4;
     } else if (roomSize == 2)
     {
         if (roomView == 1)
@@ -73,6 +74,7 @@ void MainWindow::calculate()
         {
             total += 350;
         }
+        maxGuests = 3;
     }
     if (total > 13)
     {
@@ -92,7 +94,8 @@ void MainWindow::calculate()
 
 void MainWindow::on_pushButton_clicked()
 {
-    if (valid)
+    if (valid && ui->name->toPlainText().length() > 0 &&
+            (ui->adults->value() + ui->children->value()) <= maxGuests)
         ui->stackedWidget->setCurrentIndex(1);
 }
 

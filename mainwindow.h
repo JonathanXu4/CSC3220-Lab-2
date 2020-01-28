@@ -15,6 +15,7 @@ class MainWindow : public QMainWindow
     int roomSize;
     int roomView;
     int numNights;
+    int maxGuests;
     bool parkingNeeded;
     bool valid;
 
