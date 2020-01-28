@@ -38,6 +38,10 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    int roomCalc();
+
+    QString numToString(double num);
+
 private:
     Ui::MainWindow *ui;
 };
