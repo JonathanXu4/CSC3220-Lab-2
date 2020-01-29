@@ -52,13 +52,6 @@ MainWindow::MainWindow(QWidget *parent)
     parkingNeeded = false;
     numNights = 1;
     card = 0;
-
-    //QPixmap pix("visa.png");
-    //QPixmap pix("C:/Users/Chari/Desktop/Qt/roomReservation/visa.png");
-    //ui->card->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
-
-    //ui->card->setPixmap(imageCard);
-    //ui->card->setPixmap(QPixmap pix("C:/Users/Chari/Desktop/Qt/roomReservation/visa.png"));
 }
 
 MainWindow::~MainWindow()
@@ -199,13 +192,17 @@ void MainWindow::on_cardType_activated(int index)
     if (index == 1)
     {
         ui->cc4->hide();
-        //ui->cc2->;
+        ui->imageLabel->setPixmap(QPixmap ("../roomReservation/Pictures/americanexpress.png").scaled(100,100,Qt::KeepAspectRatio));
     } else
     {
         ui->cc4->show();
     }
-
-    //visa, master card, discover, american express
+    if (index == 2)
+        ui->imageLabel->setPixmap(QPixmap ("../roomReservation/Pictures/visa.png").scaled(100,100,Qt::KeepAspectRatio));
+    else if (index == 3)
+        ui->imageLabel->setPixmap(QPixmap ("../roomReservation/Pictures/mastercard.png").scaled(100,100,Qt::KeepAspectRatio));
+    else if (index == 4)
+        ui->imageLabel->setPixmap(QPixmap ("../roomReservation/Pictures/discover.png").scaled(100,100,Qt::KeepAspectRatio));
 }
 
 // These 4 functions set the max length of the credit card number boxes

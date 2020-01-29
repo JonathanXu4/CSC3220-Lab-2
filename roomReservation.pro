@@ -30,9 +30,8 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES += \
-    american express.jfif \
-    american express.jfif \
-    discover.jfif \
-    mastercard.svg \
-    visa.png
+DISTFILES += \ \
+    Pictures/americanexpress.png \
+    Pictures/discover.png \
+    Pictures/mastercard.png \
+    Pictures/visa.png

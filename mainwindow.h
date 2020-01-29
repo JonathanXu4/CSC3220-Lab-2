@@ -64,5 +64,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    QPixmap imageCard;
 };
 #endif // MAINWINDOW_H
