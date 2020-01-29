@@ -34,4 +34,7 @@ DISTFILES += \ \
     Pictures/americanexpress.png \
     Pictures/discover.png \
     Pictures/mastercard.png \
+    Pictures/mint.png \
+    Pictures/mintBar.png \
+    Pictures/resort.png \
     Pictures/visa.png

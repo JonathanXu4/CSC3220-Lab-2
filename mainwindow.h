@@ -36,15 +36,13 @@ private slots:
 
     void on_checkBox_stateChanged(int arg1);
 
-    void on_pushButton_clicked();
+    void on_next1_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_back2_clicked();
 
     int roomCalc();
 
     QString numToString(double num);
-
-    void loadImage();
 
     void on_cardType_activated(int index);
 
@@ -56,15 +54,15 @@ private slots:
 
     void on_cc4_textChanged();
 
-    void on_pushButton_2_clicked();
+    void on_next2_clicked();
 
-    void on_pushButton_4_clicked();
+    void on_back3_clicked();
 
-    void on_pushButton_5_clicked();
+    void on_next3_clicked();
+
+    void on_next4_clicked();
 
 private:
     Ui::MainWindow *ui;
-
-    QPixmap imageCard;
 };
 #endif // MAINWINDOW_H

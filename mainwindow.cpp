@@ -10,6 +10,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // Menu options
+    this->setWindowTitle("Mint Paradise");
+
     ui->roomSize->addItem("Choose your room size");
     ui->roomSize->addItem("Queen");
     ui->roomSize->addItem("King");
@@ -48,6 +51,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->year->addItem("2025");
     ui->year->addItem("2026");
 
+    ui->mintLabel->setPixmap(QPixmap ("../roomReservation/Pictures/mint.png").scaled(150,150,Qt::KeepAspectRatio));
+
     // Initializes values to defaults so they aren't null
     parkingNeeded = false;
     numNights = 1;
@@ -59,25 +64,28 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+// room size menu selected
 void MainWindow::on_roomSize_activated(int index)
 {
     roomSize = index;
     calculate();
 }
 
+// room view menu selected
 void MainWindow::on_roomView_activated(int index)
 {
     roomView = index;
     calculate();
 }
 
+// number of nights changed
 void MainWindow::on_nights_valueChanged(int index)
 {
     numNights = index;
     calculate();
 }
 
+// parking checkbox changed
 void MainWindow::on_checkBox_stateChanged(int index)
 {
     parkingNeeded = index;
@@ -132,10 +140,10 @@ int MainWindow::roomCalc()
 // Checks to see if all information is filled out
 // before allowing the user to enter the next page
 // Also loads all information for that page when clicked
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_next1_clicked()
 {
-    //if (valid && ui->name->toPlainText().length() > 0 &&
-    //        (ui->adults->value() + ui->children->value()) <= maxGuests)
+    if (valid && ui->name->toPlainText().length() > 0 &&
+            (ui->adults->value() + ui->children->value()) <= maxGuests)
     {
         ui->stackedWidget->setCurrentIndex(1);
         total = 15;
@@ -158,7 +166,7 @@ void MainWindow::on_pushButton_clicked()
 }
 
 // Page 2 back button
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_back2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
@@ -181,11 +189,7 @@ QString MainWindow::numToString(double num)
     return fin + "." + last2 + last;
 }
 
-void MainWindow::loadImage()
-{
-
-}
-
+// Adjusts images and options based on the credit card issuer chosen
 void MainWindow::on_cardType_activated(int index)
 {
     card = index;
@@ -246,7 +250,7 @@ void MainWindow::on_cc4_textChanged()
 
 // Page 2 next button. Only checks that the credit card is
 // valid for the selected type
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_next2_clicked()
 {
     if (card == ui->cc1->toPlainText().front().digitValue() - 2 &&
             ui->cc1->toPlainText().front().digitValue() != 2)
@@ -283,20 +287,27 @@ void MainWindow::on_pushButton_2_clicked()
             ui->CreditCardNumber3->setText("xxxx-xxxxxx-" + ui->cc3->toPlainText());
         } else
         {
-            ui->CreditCardNumber3->setText("xxxx-xxxx-xxxx" + ui->cc4->toPlainText());
+            ui->CreditCardNumber3->setText("xxxx-xxxx-xxxx-" + ui->cc4->toPlainText());
         }
         ui->Total3->setText(numToString(total));
     }
 }
 
 // Page 3 back button
-void MainWindow::on_pushButton_4_clicked()
+void MainWindow::on_back3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-// Final button
-void MainWindow::on_pushButton_5_clicked()
+// Final button, goes to the final page
+void MainWindow::on_next3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
+    ui->endCard->setPixmap(QPixmap ("../roomReservation/Pictures/resort.png").scaled(800,460,Qt::KeepAspectRatio));
+}
+
+// closes the program
+void MainWindow::on_next4_clicked()
+{
+    close();
 }

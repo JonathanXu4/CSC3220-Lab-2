@@ -14,6 +14,9 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(241, 255, 239);</string>
+   </property>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
@@ -23,7 +26,13 @@
       <height>491</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QSpinBox, QPlainTextEdit, QDateEdit, QComboBox {color: rgb(200, 0, 255)}</string>
+    </property>
     <widget class="QWidget" name="page">
+     <property name="styleSheet">
+      <string notr="true">QSpinBox, QPlainTextEdit, QDateEdit, QComboBox {color: rgb(200, 0, 255)}</string>
+     </property>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
@@ -125,6 +134,9 @@
            <pointsize>12</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="text">
           <string>Cost</string>
          </property>
@@ -156,7 +168,7 @@
         <x>290</x>
         <y>440</y>
         <width>200</width>
-        <height>20</height>
+        <height>16</height>
        </rect>
       </property>
       <property name="minimumSize">
@@ -186,7 +198,7 @@
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="next1">
       <property name="geometry">
        <rect>
         <x>600</x>
@@ -194,6 +206,9 @@
         <width>100</width>
         <height>30</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(140, 210, 130);</string>
       </property>
       <property name="text">
        <string>Next</string>
@@ -246,6 +261,9 @@
            <pointsize>10</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
+         </property>
         </widget>
        </item>
        <item>
@@ -254,6 +272,9 @@
           <font>
            <pointsize>10</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
          </property>
         </widget>
        </item>
@@ -264,6 +285,9 @@
            <pointsize>10</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
+         </property>
         </widget>
        </item>
        <item>
@@ -272,6 +296,9 @@
           <font>
            <pointsize>10</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
          </property>
          <property name="minimum">
           <number>1</number>
@@ -287,6 +314,10 @@
           <font>
            <pointsize>10</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">alternate-background-color: rgb(210, 255, 205);
+background-color: rgb(210, 255, 200);</string>
          </property>
          <property name="dateTime">
           <datetime>
@@ -347,6 +378,9 @@
            <pointsize>10</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
+         </property>
          <property name="minimum">
           <number>1</number>
          </property>
@@ -362,6 +396,9 @@
            <pointsize>10</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
+         </property>
          <property name="maximum">
           <number>3</number>
          </property>
@@ -375,26 +412,29 @@
            <height>30</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
+         </property>
         </widget>
        </item>
       </layout>
      </widget>
-     <widget class="QLabel" name="imageLabel_2">
+     <widget class="QLabel" name="mintLabel">
       <property name="geometry">
        <rect>
-        <x>570</x>
-        <y>200</y>
-        <width>171</width>
-        <height>71</height>
+        <x>580</x>
+        <y>10</y>
+        <width>141</width>
+        <height>141</height>
        </rect>
       </property>
       <property name="text">
-       <string>fnaksjndjansda</string>
+       <string/>
       </property>
      </widget>
     </widget>
     <widget class="QWidget" name="page2">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="next2">
       <property name="geometry">
        <rect>
         <x>600</x>
@@ -403,11 +443,14 @@
         <height>30</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(140, 210, 130);</string>
+      </property>
       <property name="text">
        <string>Pay</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="back2">
       <property name="geometry">
        <rect>
         <x>460</x>
@@ -415,6 +458,9 @@
         <width>100</width>
         <height>30</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(140, 210, 130);</string>
       </property>
       <property name="text">
        <string>Back</string>
@@ -549,6 +595,9 @@
            <pointsize>10</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
+         </property>
         </widget>
        </item>
        <item>
@@ -584,6 +633,9 @@
              <pointsize>10</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -601,6 +653,9 @@
             <font>
              <pointsize>10</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
            </property>
           </widget>
          </item>
@@ -620,6 +675,9 @@
              <pointsize>10</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -637,6 +695,9 @@
             <font>
              <pointsize>10</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
            </property>
           </widget>
          </item>
@@ -666,6 +727,9 @@
              <pointsize>10</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -674,6 +738,9 @@
             <font>
              <pointsize>10</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
            </property>
           </widget>
          </item>
@@ -699,6 +766,9 @@
            <height>30</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
+         </property>
         </widget>
        </item>
        <item>
@@ -708,6 +778,9 @@
            <width>260</width>
            <height>30</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
          </property>
         </widget>
        </item>
@@ -719,6 +792,9 @@
            <height>30</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
+         </property>
         </widget>
        </item>
        <item>
@@ -728,6 +804,9 @@
            <width>260</width>
            <height>30</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(210, 255, 200);</string>
          </property>
         </widget>
        </item>
@@ -766,10 +845,22 @@
         <height>30</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(210, 255, 200);</string>
+      </property>
      </widget>
+     <zorder>next2</zorder>
+     <zorder>back2</zorder>
+     <zorder>label_12</zorder>
+     <zorder>layoutWidget</zorder>
+     <zorder>layoutWidget</zorder>
+     <zorder>layoutWidget</zorder>
+     <zorder>label_25</zorder>
+     <zorder>Total</zorder>
+     <zorder>imageLabel</zorder>
     </widget>
     <widget class="QWidget" name="page3">
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="back3">
       <property name="geometry">
        <rect>
         <x>460</x>
@@ -778,11 +869,14 @@
         <height>30</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(140, 210, 130);</string>
+      </property>
       <property name="text">
        <string>Back</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="next3">
       <property name="geometry">
        <rect>
         <x>600</x>
@@ -791,6 +885,9 @@
         <height>30</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(140, 210, 130);</string>
+      </property>
       <property name="text">
        <string>Finish</string>
       </property>
@@ -798,10 +895,10 @@
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>110</x>
         <y>70</y>
         <width>444</width>
-        <height>742</height>
+        <height>311</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout">
@@ -914,6 +1011,9 @@
              <pointsize>10</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -922,6 +1022,9 @@
             <font>
              <pointsize>10</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
            </property>
           </widget>
          </item>
@@ -932,6 +1035,9 @@
              <pointsize>10</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -940,6 +1046,9 @@
             <font>
              <pointsize>10</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
            </property>
           </widget>
          </item>
@@ -950,6 +1059,9 @@
              <pointsize>10</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -958,6 +1070,9 @@
             <font>
              <pointsize>10</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
            </property>
           </widget>
          </item>
@@ -968,6 +1083,9 @@
              <pointsize>10</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -977,6 +1095,9 @@
              <pointsize>10</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(210, 255, 200);</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -984,7 +1105,58 @@
       </layout>
      </widget>
     </widget>
-    <widget class="QWidget" name="page4"/>
+    <widget class="QWidget" name="page4">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(48, 75, 45);</string>
+     </property>
+     <widget class="QLabel" name="endCard">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>721</width>
+        <height>421</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="next4">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>450</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(138, 213, 127);</string>
+      </property>
+      <property name="text">
+       <string>Close</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>450</y>
+        <width>531</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>No refunds accepted under any circumstance</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
