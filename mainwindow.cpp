@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QPixmap>
 
 
 
@@ -19,10 +20,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->cost->setText("Please fill out all information");
 
+    ui->cardType->addItem("American Express");
     ui->cardType->addItem("Visa");
     ui->cardType->addItem("Master Card");
     ui->cardType->addItem("Discover");
-    ui->cardType->addItem("American Express");
 
     ui->month->addItem("January");
     ui->month->addItem("February");
@@ -46,8 +47,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->year->addItem("2025");
     ui->year->addItem("2026");
 
+    // Initializes values to defaults so they aren't null
     parkingNeeded = false;
     numNights = 1;
+    card = 0;
+
+    //QPixmap pix("visa.png");
+    //QPixmap pix("C:/Users/Chari/Desktop/Qt/roomReservation/visa.png");
+    //ui->card->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
+
+    //ui->card->setPixmap(imageCard);
+    //ui->card->setPixmap(QPixmap pix("C:/Users/Chari/Desktop/Qt/roomReservation/visa.png"));
 }
 
 MainWindow::~MainWindow()
@@ -124,7 +134,7 @@ int MainWindow::roomCalc()
     return 0;
 }
 
-// The next button
+// Page 1 next button
 // Checks to see if all information is filled out
 // before allowing the user to enter the next page
 // Also loads all information for that page when clicked
@@ -149,6 +159,7 @@ void MainWindow::on_pushButton_clicked()
 
 }
 
+// Page 2 back button
 void MainWindow::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
@@ -170,4 +181,110 @@ QString MainWindow::numToString(double num)
         fin += numb.at(i);
     }
     return fin + "." + last2 + last;
+}
+
+void MainWindow::loadImage()
+{
+
+}
+
+void MainWindow::on_cardType_activated(int index)
+{
+    card = index;
+    if (index == 3)
+    {
+        ui->cc4->hide();
+        //ui->cc2->;
+    } else
+    {
+        ui->cc4->show();
+    }
+
+    //visa, master card, discover, american express
+}
+
+// These 4 functions set the max length of the credit card number boxes
+void MainWindow::on_cc2_textChanged()
+{
+    if (card == 0)
+    {
+        if (ui->cc2->toPlainText().length() > 6)
+            ui->cc2->textCursor().deletePreviousChar();
+    } else
+    {
+        if (ui->cc2->toPlainText().length() > 4)
+            ui->cc2->textCursor().deletePreviousChar();
+    }
+}
+
+void MainWindow::on_cc3_textChanged()
+{
+    if (card == 0)
+    {
+        if (ui->cc3->toPlainText().length() > 5)
+            ui->cc3->textCursor().deletePreviousChar();
+    } else
+    {
+        if (ui->cc3->toPlainText().length() > 4)
+            ui->cc3->textCursor().deletePreviousChar();
+    }
+}
+
+void MainWindow::on_cc1_textChanged()
+{
+    if (ui->cc1->toPlainText().length() > 4)
+        ui->cc1->textCursor().deletePreviousChar();
+}
+
+void MainWindow::on_cc4_textChanged()
+{
+    if (ui->cc4->toPlainText().length() > 4)
+        ui->cc4->textCursor().deletePreviousChar();
+}
+
+// Page 2 next button. Only checks that the credit card is
+// valid for the selected type
+void MainWindow::on_pushButton_2_clicked()
+{
+    if (card == ui->cc1->toPlainText().front().digitValue() - 3)
+    {
+        ui->stackedWidget->setCurrentIndex(2);
+        ui->Duration3->setText(QString::number(numNights));
+        if (roomSize == 1) {
+            if (roomView == 1)
+            {
+                ui->RoomType3->setText("Queen Standard");
+            } else
+            {
+                ui->RoomType3->setText("Queen Atrium");
+            }
+        } else
+        {
+            if (roomView == 1)
+            {
+                ui->RoomType3->setText("King Standard");
+            } else
+            {
+                ui->RoomType3->setText("King Atrium");
+            }
+        }
+        ui->StartDate3->setText(ui->date->dateTime().toString());
+        if (parkingNeeded)
+            ui->ParkingNeeded3->setText("Yes");
+        else
+            ui->ParkingNeeded3->setText("No");
+        //ui->Adults3->setText(ui->adults->);
+    }
+}
+
+// Page 3 back button
+void MainWindow::on_pushButton_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+// Final button
+void MainWindow::on_pushButton_5_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
 }

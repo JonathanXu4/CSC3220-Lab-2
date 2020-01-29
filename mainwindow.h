@@ -16,6 +16,7 @@ class MainWindow : public QMainWindow
     int roomView;
     int numNights;
     int maxGuests;
+    int card;
     bool parkingNeeded;
     bool valid;
 
@@ -41,6 +42,24 @@ private slots:
     int roomCalc();
 
     QString numToString(double num);
+
+    void loadImage();
+
+    void on_cardType_activated(int index);
+
+    void on_cc2_textChanged();
+
+    void on_cc3_textChanged();
+
+    void on_cc1_textChanged();
+
+    void on_cc4_textChanged();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
 
 private:
     Ui::MainWindow *ui;
