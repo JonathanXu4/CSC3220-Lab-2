@@ -290,7 +290,7 @@
          </property>
          <property name="dateTime">
           <datetime>
-           <hour>0</hour>
+           <hour>7</hour>
            <minute>0</minute>
            <second>0</second>
            <year>2020</year>
@@ -300,9 +300,9 @@
          </property>
          <property name="maximumDateTime">
           <datetime>
-           <hour>23</hour>
-           <minute>59</minute>
-           <second>59</second>
+           <hour>7</hour>
+           <minute>0</minute>
+           <second>0</second>
            <year>2021</year>
            <month>12</month>
            <day>31</day>
@@ -310,13 +310,27 @@
          </property>
          <property name="minimumDateTime">
           <datetime>
-           <hour>0</hour>
+           <hour>7</hour>
            <minute>0</minute>
            <second>0</second>
            <year>2020</year>
            <month>2</month>
            <day>7</day>
           </datetime>
+         </property>
+         <property name="maximumTime">
+          <time>
+           <hour>7</hour>
+           <minute>0</minute>
+           <second>0</second>
+          </time>
+         </property>
+         <property name="minimumTime">
+          <time>
+           <hour>7</hour>
+           <minute>0</minute>
+           <second>0</second>
+          </time>
          </property>
          <property name="displayFormat">
           <string>M/d/yyyy</string>
@@ -705,6 +719,40 @@
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>310</y>
+        <width>104</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Total</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="Total">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>310</y>
+        <width>119</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>260</width>
+        <height>30</height>
+       </size>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="page3">

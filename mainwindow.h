@@ -19,6 +19,7 @@ class MainWindow : public QMainWindow
     int card;
     bool parkingNeeded;
     bool valid;
+    double total;
 
 public:
     MainWindow(QWidget *parent = nullptr);

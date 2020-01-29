@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->cost->setText("Please fill out all information");
 
+    ui->cardType->addItem("Choose your credit card");
     ui->cardType->addItem("American Express");
     ui->cardType->addItem("Visa");
     ui->cardType->addItem("Master Card");
@@ -144,17 +145,21 @@ void MainWindow::on_pushButton_clicked()
     //        (ui->adults->value() + ui->children->value()) <= maxGuests)
     {
         ui->stackedWidget->setCurrentIndex(1);
-
+        total = 15;
+        total += 1.15 * roomCalc();
         ui->room->setText(numToString(roomCalc() * numNights));
         ui->tax->setText(numToString(roomCalc() * 0.15 * numNights));
         if (parkingNeeded)
         {
             ui->parkingFee->setText(numToString(12.75 * numNights));
+            total += 12.75;
         } else
         {
             ui->parkingFee->setText("$0.00");
         }
         ui->resortFee->setText(numToString(15 * numNights));
+        total *= numNights;
+        ui->Total->setText(numToString(total));
     }
 
 }
@@ -191,7 +196,7 @@ void MainWindow::loadImage()
 void MainWindow::on_cardType_activated(int index)
 {
     card = index;
-    if (index == 3)
+    if (index == 1)
     {
         ui->cc4->hide();
         //ui->cc2->;
@@ -206,7 +211,7 @@ void MainWindow::on_cardType_activated(int index)
 // These 4 functions set the max length of the credit card number boxes
 void MainWindow::on_cc2_textChanged()
 {
-    if (card == 0)
+    if (card == 1)
     {
         if (ui->cc2->toPlainText().length() > 6)
             ui->cc2->textCursor().deletePreviousChar();
@@ -219,7 +224,7 @@ void MainWindow::on_cc2_textChanged()
 
 void MainWindow::on_cc3_textChanged()
 {
-    if (card == 0)
+    if (card == 1)
     {
         if (ui->cc3->toPlainText().length() > 5)
             ui->cc3->textCursor().deletePreviousChar();
@@ -246,7 +251,8 @@ void MainWindow::on_cc4_textChanged()
 // valid for the selected type
 void MainWindow::on_pushButton_2_clicked()
 {
-    if (card == ui->cc1->toPlainText().front().digitValue() - 3)
+    if (card == ui->cc1->toPlainText().front().digitValue() - 2 &&
+            ui->cc1->toPlainText().front().digitValue() != 2)
     {
         ui->stackedWidget->setCurrentIndex(2);
         ui->Duration3->setText(QString::number(numNights));
@@ -273,7 +279,16 @@ void MainWindow::on_pushButton_2_clicked()
             ui->ParkingNeeded3->setText("Yes");
         else
             ui->ParkingNeeded3->setText("No");
-        //ui->Adults3->setText(ui->adults->);
+        ui->Adults3->setText(QString::number(ui->adults->value()));
+        ui->Children3->setText(QString::number(ui->children->value()));
+        if (card == 1)
+        {
+            ui->CreditCardNumber3->setText("xxxx-xxxxxx-" + ui->cc3->toPlainText());
+        } else
+        {
+            ui->CreditCardNumber3->setText("xxxx-xxxx-xxxx" + ui->cc4->toPlainText());
+        }
+        ui->Total3->setText(numToString(total));
     }
 }
 
